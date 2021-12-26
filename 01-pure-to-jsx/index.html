@@ -23,12 +23,24 @@
             ])
         }
 
+        const TestFunc = (props) => {
+            return React.createElement('div', {}, [
+                React.createElement('h2', {}, props.title),
+                React.createElement('p', {}, [
+                    React.createElement('i', {}, 'Param2: '),
+                    React.createElement('span', {}, props.data),
+                ]),
+            ])
+        }
+
         const App = () => {
             return React.createElement('div', {}, [
                 React.createElement('h1', {
                     id: 'hello', className: 'class1'
                 }, 'Hello from React'),
-                React.createElement(MyInfo)
+                React.createElement(MyInfo),
+                React.createElement(TestFunc, { title: 'Test1', data: 'test1' }),
+                React.createElement(TestFunc, { title: 'Test2', data: 'test2' })
             ])
         }
 
