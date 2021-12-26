@@ -13,10 +13,23 @@
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
     <script>
+        const MyInfo = () => {
+            return React.createElement('div', {}, [
+                React.createElement('h2', {}, 'Yauheniya Sirotkina'),
+                React.createElement('p', {}, [
+                    React.createElement('b', {}, 'Date of Birth: '),
+                    React.createElement('span', {}, '22.12.1989'),
+                ]),
+            ])
+        }
+
         const App = () => {
-            return React.createElement('h1', {
-                id: 'hello', className: 'class1'
-            }, 'Hello from React')
+            return React.createElement('div', {}, [
+                React.createElement('h1', {
+                    id: 'hello', className: 'class1'
+                }, 'Hello from React'),
+                React.createElement(MyInfo)
+            ])
         }
 
         ReactDOM.render(React.createElement(App), document.getElementById('root'))
