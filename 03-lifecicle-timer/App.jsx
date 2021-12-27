@@ -8,10 +8,15 @@ class App extends Component {
 
   componentDidMount() {
     console.log("componentDidMount");
+    const userTimerValue = localStorage.getItem("timerValue");
+    if (userTimerValue) {
+      this.setState({ timerValue: +userTimerValue });
+    }
   }
 
   componentDidUpdate() {
     console.log("componentDidUpdate");
+    localStorage.setItem("timerValue", this.state.timerValue);
   }
 
   componentWillUnmount() {
