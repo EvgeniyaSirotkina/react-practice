@@ -10,11 +10,17 @@ class App extends Component {
     ]
   };
 
+  removePost = (id) => {
+    this.setState({ posts: this.state.posts.filter((post) => post.id !== id) });
+  };
+
   render() {
+    const { posts } = this.state;
+    
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>React Posts</h1>
-        <Posts posts={this.state.posts} />
+        <Posts posts={posts} removePost={this.removePost} />
       </div>
     );
   }
