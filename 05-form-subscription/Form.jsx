@@ -79,7 +79,7 @@ class Form extends React.Component {
           onClick={() => handleSubmit(email.value)}
           title={
             !formIsValid
-              ? "You need to input a valid email and agree with terms and conditions"
+              ? "You need to input a valid email and accept all terms and conditions"
               : null
           }
         >
