@@ -2,30 +2,33 @@ import React, { useEffect, useReducer } from "react";
 
 
 const countReducer = (state, { type } ) => {
-  switch (type) {
-    case 'START':
-      return {
-        ...state,
-        isCounting: true
-      }
-    case 'STOP':
-      return {
-        ...state,
-        isCounting: false
-      }
-    case 'RESET':
-      return {
-        count: 0,
-        isCounting: false
-      }
-    case 'TICK':
-      return {
-        ...state,
-        count: state.count + 1
-      }
+  if (type === 'START') {
+    return {
+      ...state,
+      isCounting: true
+    }
   }
 
-  return state;
+  if (type === 'STOP') {
+    return {
+      ...state,
+      isCounting: false
+    }
+  }
+
+  if (type === 'RESET') {
+    return {
+      count: 0,
+      isCounting: false
+    }
+  }
+
+  if (type === 'TICK') {
+    return {
+      ...state,
+      count: state.count + 1
+    }
+  }
 };
 
 function getDefaultValue() {
